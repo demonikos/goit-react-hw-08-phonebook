@@ -13,24 +13,6 @@ import cont from './../../images/cont.jpg';
 import log from './../../images/log.jpg';
 import reg from './../../images/reg.jpg';
 
-// const images = [
-//   {
-//     label: 'Fast to signup',
-//     imgPath:
-//       reg,
-//   },
-//   {
-//     label: 'Quick to login',
-//     imgPath:
-//       log,
-//   },
-//   {
-//     label: 'Easy to use',
-//     imgPath:
-//       cont,
-//   },
-// ];
-
 export const HomePage = () => {
   return (
     <div className={css.Wrap}>
@@ -85,5 +67,3 @@ export const HomePage = () => {
     </div>
   );
 };
-
-// export default HomePage;

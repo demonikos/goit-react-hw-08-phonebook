@@ -27,14 +27,12 @@ export const ContactList = () => {
   }
 
   return (
-    // <>
-      <List sx={{ width: '100%', maxWidth: 400, margin: '0 auto' }}>
-        {contacts.map(contact => (
-          <ListItem key={contact.id} className={css.ListItem}>
-            <Contact key={contact.id} contact={contact} />
-          </ListItem>
-        ))}
-      </List>
-    // </>
+    <List sx={{ width: '100%', maxWidth: 400, margin: '0 auto' }}>
+      {contacts.map(contact => (
+        <ListItem key={contact.id} className={css.ListItem}>
+          <Contact key={contact.id} contact={contact} />
+        </ListItem>
+      ))}
+    </List>
   );
 };

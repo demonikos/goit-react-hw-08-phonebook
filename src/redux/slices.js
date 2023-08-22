@@ -80,7 +80,6 @@ export const authorizationSlice = createSlice({
     user: {
       name: null,
       email: null,
-      // password: null
     },
     token: '',
     isLoading: false,

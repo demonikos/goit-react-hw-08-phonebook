@@ -9,9 +9,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-// import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+
 import RecentActorsIcon from '@mui/icons-material/RecentActors';
-// import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
 
@@ -21,7 +20,7 @@ import { getLoggin, getUserName } from 'redux/selectors';
 import { Button } from '@mui/material';
 import { Link, NavLink } from 'react-router-dom';
 
-import css from './AppBar.module.css'
+import css from './AppBar.module.css';
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -64,7 +63,7 @@ function ResponsiveAppBar() {
                 }}
               >
                 <RecentActorsIcon
-                  sx={{ display: { xs: 'none', md: 'flex', color: "white" } }}
+                  sx={{ display: { xs: 'none', md: 'flex', color: 'white' } }}
                 />
                 <Typography
                   variant="h6"
@@ -264,7 +263,7 @@ function ResponsiveAppBar() {
                   }}
                 >
                   <LogoutIcon />
-                      Log out
+                  Log out
                 </MenuItem>
               </Menu>
             </Box>

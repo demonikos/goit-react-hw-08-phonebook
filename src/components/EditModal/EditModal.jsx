@@ -39,7 +39,6 @@ export const ContactEditModal = (id, name, number) => {
   }
 
   const onClickEdit = (id, name, number) => {
-    // setEditedContact({id, name, number});
     setState(prevState => {
       return { ...prevState, id: id, name: name, number: number };
     });
@@ -49,16 +48,9 @@ export const ContactEditModal = (id, name, number) => {
   };
 
   const handleOpenModal = () => {
-    // handleClose();
     setOpenModal(true);
     console.log(`newstate - `, state);
   };
-
-  // const handleOpenModal = (id, name, number) => {
-  //   // handleClose();
-  //   setOpenModal(true);
-  //   setEditedContact({id, name, number});
-  // };
 
   const handleCloseModal = () => {
     setOpenModal(false);
@@ -87,7 +79,6 @@ export const ContactEditModal = (id, name, number) => {
     if (
       !contacts.some(elem => elem.name.toLowerCase() === name.toLowerCase())
     ) {
-      // dispatch(addContact({ id, name, phone }));
       dispatch(editContact(id, name, number));
 
       setState(prevState => {
@@ -113,7 +104,7 @@ export const ContactEditModal = (id, name, number) => {
 
   return (
     <>
-      <Dialog open={openModal} onClose={handleCloseModal}>
+      <Dialog open={openModal} onClose={handleCloseModal} onClick={onClickEdit}>
         <DialogTitle>Edit contact</DialogTitle>
         <DialogContent>
           <DialogContentText>

@@ -18,16 +18,10 @@ import { clearErrorOnUnmount } from 'redux/slices';
 import { getAuthorizationError } from 'redux/selectors';
 import { Link } from 'react-router-dom';
 
-// const nameExp = new RegExp(
-//   "^[a-zA-Za-яА-Я]+(([' ]?[ a-zA-Za-яА-Я ])?[a-zA-Za-яА-Я]*)*$"
-// );
-// const phoneExp = new RegExp('^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-s./0-9]*$');
-
 export const LoginForm = () => {
   const load = isLoading;
 
   const [state, setState] = useState({
-    // name: '',
     email: '',
     password: '',
   });
@@ -49,13 +43,6 @@ export const LoginForm = () => {
   };
 
   const onInputChange = event => {
-    // if (event.target.name === 'phone' && event.target.value.length > 16) {
-    //   Notify.failure(
-    //     'Too much signs in number. Please, check the inputed value'
-    //   );
-    //   return;
-    // }
-
     setState(prevState => {
       return { ...prevState, [event.target.name]: event.target.value };
     });
@@ -71,18 +58,6 @@ export const LoginForm = () => {
 
   return (
     <form className={css.Form} onSubmit={onSubmitHandler}>
-      {/* <TextField
-        id="outlined-basic-name"
-        type="text"
-        name="name"
-        label="Name"
-        variant="outlined"
-        value={state.name}
-        pattern={nameExp}
-        title="Name may contain only letters, apostrophe, dash and spaces."
-        required
-        onChange={onInputChange}
-      /> */}
       <TextField
         id="login-input-email"
         type="email"
@@ -134,7 +109,6 @@ export const LoginForm = () => {
       )}
 
       <LoadingButton
-        // className = {css.Button}
         type="submit"
         color="primary"
         onSubmit={onSubmitHandler}

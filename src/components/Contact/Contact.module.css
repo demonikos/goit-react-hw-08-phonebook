@@ -1,17 +1,17 @@
 .Form {
   display: flex;
   flex-direction: row;
-  column-gap: 18px; 
+  column-gap: 18px;
 }
 
 .Inputs {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px; 
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 }
 
 .Button {
-height: 36px;
-width: 121px;
-align-self: center;
+  height: 36px;
+  width: 121px;
+  align-self: center;
 }

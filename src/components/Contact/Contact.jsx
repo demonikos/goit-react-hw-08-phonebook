@@ -3,29 +3,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from 'redux/selectors';
 import { deleteContact, editContact } from 'redux/operations';
 import PropTypes from 'prop-types';
+import { Notify } from 'notiflix';
 
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-
 import { styled, alpha } from '@mui/material/styles';
 import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import MenuItem from '@mui/material/MenuItem';
 import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { TextField } from '@mui/material';
+import { Save } from '@mui/icons-material';
 
 import css from './Contact.module.css';
-
-// import LoadingButton from '@mui/lab/LoadingButton';
-import DeleteIcon from '@mui/icons-material/Delete';
-// import { FormDialog } from 'components/EditModal/EditModal';
-import { TextField } from '@mui/material';
-// import { Notify } from 'notiflix';
-// import { LoadingButton } from '@mui/lab';
-import { Save } from '@mui/icons-material';
-import { Notify } from 'notiflix';
 
 const nameExp = new RegExp(
   "^[a-zA-Za-яА-Я]+(([' ]?[ a-zA-Za-яА-Я ])?[a-zA-Za-яА-Я]*)*$"
@@ -33,7 +27,6 @@ const nameExp = new RegExp(
 const phoneExp = new RegExp('^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-s./0-9]*$');
 
 export const Contact = ({ contact }) => {
-  //   console.log(contact);
   const [state, setState] = useState({
     name: '',
     number: '',
@@ -41,10 +34,6 @@ export const Contact = ({ contact }) => {
 
   const dispatch = useDispatch();
   const contactRedux = useSelector(getContacts);
-
-  //   useEffect(() => {
-  //     dispatch(fetchContacts());
-  //   }, [dispatch]);
 
   const onDelete = id => {
     dispatch(deleteContact(id));
@@ -160,18 +149,11 @@ export const Contact = ({ contact }) => {
 
   const [edited, setEdited] = useState(false);
 
-
   const onClickEdit = event => {
-    // if (edited === true) {
-    //     Notify.info(`Another contact is editing, please finish that one.`);
-    //     return
-    // } else {
-        setEdited(true);
-        setState(prevState => {
-          return { ...prevState, name: contact.name, number: contact.number };
-        });
-    // }
-
+    setEdited(true);
+    setState(prevState => {
+      return { ...prevState, name: contact.name, number: contact.number };
+    });
   };
 
   return (
@@ -211,24 +193,11 @@ export const Contact = ({ contact }) => {
               open={open}
               onClose={handleClose}
             >
-              <MenuItem
-                // onClick={{ handleOpenModal, handleClose }}
-                onClick={onClickEdit}
-                // onClick={onClickEdit(contacts.id, contacts.name, contacts.number)}
-
-                disableRipple
-              >
+              <MenuItem onClick={onClickEdit} disableRipple>
                 <EditIcon />
                 Edit
               </MenuItem>
-              <MenuItem
-                // onClick={() => {
-                //   onDelete(contact.id);
-                //   handleClose();
-                // }}
-                onClick={deleteHandler}
-                disableRipple
-              >
+              <MenuItem onClick={deleteHandler} disableRipple>
                 <DeleteIcon />
                 Delete
               </MenuItem>
@@ -267,7 +236,7 @@ export const Contact = ({ contact }) => {
               />
             </div>
             <Button
-                className={css.Button}
+              className={css.Button}
               id="contact-save-edition"
               type="submit"
               color="primary"
@@ -290,4 +259,4 @@ Contact.propTypes = {
     name: PropTypes.string.isRequired,
     number: PropTypes.string.isRequired,
   }),
-}
+};

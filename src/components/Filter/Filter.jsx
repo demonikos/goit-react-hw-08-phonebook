@@ -5,7 +5,7 @@ import { getFilter } from 'redux/selectors';
 
 import { TextField } from '@mui/material';
 
-import css from './Filter.module.css'
+import css from './Filter.module.css';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -16,12 +16,7 @@ export const Filter = () => {
   };
 
   return (
-    <>
-      {/* <div className=''>
-        <label className={css.Label}>Find contacts by name</label>
-        <input type="text" value={filterRedux} onChange={onChangeFilter} />
-      </div> */}
-<div className={css.SearchBlock}>
+    <div className={css.SearchBlock}>
       <TextField
         className={css.SearchInput}
         id="outlined-basic"
@@ -30,15 +25,8 @@ export const Filter = () => {
         label="Find contacts by name"
         variant="outlined"
         value={filterRedux}
-        // inputProps={namePattern}
-        // pattern="^[a-zA-Za-яА-Я]+(([' \-][a-zA-Za-яА-Я ])?[a-zA-Za-яА-Я]*)*$"
-        // pattern={nameExp}
-        // title="Name may contain only letters, apostrophe, dash and spaces."
-        // required
         onChange={onChangeFilter}
       />
-
-</div>
-    </>
+    </div>
   );
 };

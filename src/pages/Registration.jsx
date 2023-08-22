@@ -1,5 +1,5 @@
-import { RegisterForm } from "components/RegisterForm/RegisterForm";
+import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 
 export const Registration = () => {
-    return <RegisterForm/>
-}
+  return <RegisterForm />;
+};

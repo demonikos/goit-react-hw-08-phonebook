@@ -34,7 +34,7 @@ const fetchLogIn = createAsyncThunk('users/login', async (user, thunkAPI) => {
     Loading.hourglass('Loading log in...');
     const response = await axios.post('/users/login', user);
     setAuthorization(response.data.token);
-    console.log(response.data)
+    console.log(response.data);
     const userName = response.data.user.name;
     Notify.success(`Welcome back, ${userName}, how it's going?`);
     return response.data;

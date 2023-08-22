@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { isLoading, fetchSignUp } from 'redux/operations';
 import { clearErrorOnUnmount } from 'redux/slices';
@@ -17,13 +18,6 @@ import IconButton from '@mui/material/IconButton';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 import css from '../ContactForm/ContactForm.module.css';
-// import { Login } from 'pages/Login';
-import { Link } from 'react-router-dom';
-
-// const nameExp = new RegExp(
-//   "^[a-zA-Za-яА-Я]+(([' ]?[ a-zA-Za-яА-Я ])?[a-zA-Za-яА-Я]*)*$"
-// );
-// const phoneExp = new RegExp('^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-s./0-9]*$');
 
 export const RegisterForm = () => {
   const load = isLoading;
@@ -44,27 +38,12 @@ export const RegisterForm = () => {
 
   const onSubmitHandler = event => {
     event.preventDefault();
-    console.log(state);
-    // if (event.target.name === 'password' && event.target.value.length < 8){
-    //   Notify.failure('Too much signs in number. Please, check the inputed value');
-    // return
-    // }
 
     if (state.password.length < 8) {
       Notify.failure('Password must be at least 8 characters without spaces.');
       return;
     }
-
-    // if (isError) {
-    //   Notify.warning(
-    //     'The user with this email address is already registered. Try to login.'
-    //   );
-    // }
-
     dispatch(fetchSignUp(state));
-    console.log(state);
-
-    // dispatch(fetchSignUp(values));
   };
 
   const onInputChange = event => {
@@ -90,7 +69,6 @@ export const RegisterForm = () => {
         label="Name"
         variant="outlined"
         value={state.name}
-        // pattern={nameExp}
         title="Name may contain only letters, apostrophe, dash and spaces."
         required
         onChange={onInputChange}
@@ -102,7 +80,6 @@ export const RegisterForm = () => {
         label="Email"
         variant="outlined"
         value={state.email}
-        // pattern={phoneExp}
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
         onChange={onInputChange}
@@ -132,8 +109,6 @@ export const RegisterForm = () => {
         />
       </FormControl>
 
-      {/* {isError && Notify.warning("The user with this email address is already registered. Try to login.")} */}
-
       {isError && (
         <Typography color="red">
           The user with this email address is already exists. Please, try to{' '}
@@ -148,7 +123,6 @@ export const RegisterForm = () => {
       )}
 
       <LoadingButton
-        // className = {css.Button}
         type="submit"
         color="primary"
         onSubmit={onSubmitHandler}
