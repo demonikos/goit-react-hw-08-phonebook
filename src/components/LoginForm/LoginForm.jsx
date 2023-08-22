@@ -129,7 +129,7 @@ export const LoginForm = () => {
 
       {!isError && (
         <Typography color="blue">
-          Don't registered yet? Just join <Link to="/registration">us</Link>
+          Don't registered yet? Just <Link to="/registration">join us</Link>
         </Typography>
       )}
 
