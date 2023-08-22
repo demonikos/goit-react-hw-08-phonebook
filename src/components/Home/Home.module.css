@@ -1,0 +1,18 @@
+.Wrap {
+    margin: 25px auto;
+    align-items: center;
+    align-content: center;
+}
+
+.H1 {
+    /* margin: 25px auto; */
+    align-self: center;
+}
+
+/* .Subtext {
+    font-family: 'Dancing Script';
+
+    font-style: italic;
+    margin: 0 auto;
+    text-align: center;
+} */

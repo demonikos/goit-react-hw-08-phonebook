@@ -1,0 +1,9 @@
+.SearchBlock {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.SearchInput {
+    text-align: center;
+    width: 100%;
+}

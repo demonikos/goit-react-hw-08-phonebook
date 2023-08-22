@@ -13,3 +13,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'Dancing Script';
+  src: url('./fonts/DancingScript-Bold.ttf');
+  font-weight: normal;
+  font-style: italic;
+}

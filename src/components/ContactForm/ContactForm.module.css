@@ -1,0 +1,17 @@
+.Form {
+display: flex;
+flex-direction: column;
+row-gap: 15px;
+max-width: 320px;
+margin: 15px auto;
+}
+
+.Label {
+    font-style: italic;
+    text-align: center;
+}
+
+.Button {
+    width: 80px;
+    align-self: center;
+}

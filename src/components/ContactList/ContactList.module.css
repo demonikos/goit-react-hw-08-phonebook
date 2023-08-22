@@ -1,0 +1,16 @@
+.Style {
+    width: 100px;
+    height: 20px;
+    color: #1976d2;
+  };
+
+  .List {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    border: 1px;
+  }
+
+  .ListItem {
+    max-width: 480px;
+  }
